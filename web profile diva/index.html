@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div id="profil-container">
+            <div class="profil">
+                <img src="profil.png" alt="profil"><br>   
+            </div>
+            <h1>DIVA FARIHA ASWARINA</h1>
+            <p>Front End Developer</p>
+            </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#profil-container">Home</a></li>
+            <li><a href="#profile">Profil</a></li>
+            <li><a href="#education">Pendidikan</a></li>
+            <li><a href="#skill">Skills</a></li>
+            <li><a href="#projects">Proyek</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <section id="profile">
+        <h2>Profil</h2>
+        <p>  Saya adalah mahasiswa Teknik Informatika di Universitas Duta Bangsa Surakarta dengan minat besar dalam pengembangan perangkat lunak dan kecerdasan buatan. Saya berkomitmen untuk menerapkan pengetahuan akademis saya ke dalam proyek nyata dan mencari peluang magang untuk mengembangkan keterampilan saya lebih lanjut.
+        </p>
+    </section>
+
+    <section id="education">
+        <h2>Pendidikan</h2>
+        <ul>
+            <li>Universitas Duta Bangsa Surakarta - S1 Teknik Informatika (2021 - Now)</li>
+            <li>SMA Negeri 6 Surakarta - Jurusan IPA (2019 - 2021)</li>
+        </ul>
+    </section>
+
+    <section id="skill">
+        <h2>Skills</h2>
+        <ul>
+            <div class="skill-container">            
+                <li>
+                    <strong>Basic Pemrograman: </strong><br>
+                    <span>Python    </span>
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><br>
+                    <span>C++       </span>
+                    <span class="stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span><br>
+                    <span>JavaScript</span>
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><br>
+                    <span>PHP       </span>
+                    <span class="stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span>
+                </li>
+                <li>
+                    <strong>Pengembangan Web:</strong><br>
+                    HTML
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><br>
+                    CSS
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                </li>
+                <li>
+                    <strong>Design:</strong><br>
+                    Figma
+                    <span class="stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span>
+                </li>
+            </div>
+        </ul>
+    </section>
+    
+
+    <section id="projects">
+        <h2>Proyek</h2>
+        <div class="slider">
+            <div class="slider-container">
+                <div class="slide">
+                    <div class="project-item">
+                        <img src="4.png" alt="Proyek 1"> 
+                        <p><a href="https://github.com/divafariha/slip-gaji-karyawan">Slip Gaji Karyawan</a></p>
+                    </div>
+                    <div class="project-item">
+                        <img src="5.png" alt="Proyek 2">
+                        <p><a href="https://github.com/divafariha/SCStationery">Web Admin Stationery</a></p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="project-item">
+                        <img src="6.png" alt="Proyek 3">
+                        <p><a href="https://github.com/divafariha/GAME-TEBAK-BUAH">Game Tebak Buah</a></p>
+                    </div>
+                    <div class="project-item">
+                        <img src="7.png" alt="Proyek 4">
+                        <p><a href="https://github.com/divafariha/Intro-Slide-Aplikasi">Intro slide Aplikasi</a></p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="project-item">
+                        <img src="8.png" alt="Proyek 5">
+                        <p><a href="https://github.com/divafariha/Web-Rumah-Sakit-THT">Web Rumah Sakit THT</a></p>
+                    </div>
+                    <div class="project-item">
+                        <img src="9.png" alt="Proyek 6">
+                        <p><a href="https://www.figma.com/proto/TeR0gJLegq8J7YYTT7P1nM/WEBSITE-PENCARIAN-DRAMA?node-id=1-2&t=zYX8r70b21AYi8bG-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A2&content-scaling=fixed">Web Drama</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <div class="prev">&#10094;</div>
+                <div class="next">&#10095;</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = (i === index) ? 'flex' : 'none';
+            });
+        }
+
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        function prevSlide() {
+            slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        next.addEventListener('click', nextSlide);
+        prev.addEventListener('click', prevSlide);
+
+        // Tampilkan slide pertama saat halaman dimuat
+        showSlide(slideIndex);
+    </script>
+
+    <section id="contact">
+        <h2>Kontak</h2>
+        <p>Email: divafariha023@gmail</p>
+        <p>WhatsApp: 085645828162</p>
+        <p>Instagram: divafariha_</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Diva Fariha Aswarina</p>
+    </footer>
+</body>
+</html>

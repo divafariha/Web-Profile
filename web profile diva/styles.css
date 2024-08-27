@@ -1,0 +1,191 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #c7def1;
+}
+
+header {
+    background-color: #c7def1;
+    color: #172d49;
+    padding: 20px 20px;
+    text-align: center;
+}
+
+#profil-container {
+    display: flex;
+    margin-left: 200px;
+    flex-wrap: wrap;
+}
+
+.profil {
+    width: 30%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profil img {
+    margin-top: 80px;
+    margin-bottom: 30px;
+    width: 350px;
+    height: 410px;
+    border-radius: 0%;
+}
+
+#profil-container h1 {
+    margin-top: 170px;
+    margin-left: 100px;
+    font-weight: bold;
+    font-size: 50px;
+}
+#profil-container p {
+    margin-top: 230px;
+    margin-left: -590px;
+    font-weight: bold;
+    font-size: 30px;
+    font-style: italic;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-color: #172d49;
+    z-index: 1000; /* Menempatkan navbar di atas elemen lain */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+section {
+    padding: 30px 30px;
+    margin: 20px auto;
+    background-color: #fff;
+    max-width: 1000px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.skill-container {
+    display: flex;
+    justify-content: space-evenly;
+} 
+
+.stars {
+    color: #172d49; /* Warna bintang (gold) */
+    font-size: 1.7em; /* Ukuran bintang */
+    margin-left: 20px; /* Jarak antara skill dan rating */
+}
+
+/* Slider container */
+.slider {
+    position: relative;
+    max-width: 1200px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+/* Container for the slides */
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Individual slides */
+.slide {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Project item styling */
+.project-item {
+    width: 48%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.project-item img {
+    width: 450px;
+    height: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+.project-item p {
+    margin-top: -55px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Navigation arrows */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    transform: translateY(0%);
+}
+
+.slider-nav .prev, .slider-nav .next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 0%;
+    cursor: pointer;
+}
+
+.slider-nav .prev:hover, .slider-nav .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.contact button{
+    color: navy;
+	background-color: transparent;
+	border:none; 
+	padding: 8px 20px; 
+	margin: 8px;
+	font-size: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
