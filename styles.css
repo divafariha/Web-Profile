@@ -1,3 +1,4 @@
+/* Base styling for the body and general layout */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -9,54 +10,39 @@ body {
 header {
     background-color: #c7def1;
     color: #172d49;
-    padding: 20px 20px;
+    padding: 20px;
     text-align: center;
 }
 
 #profil-container {
     display: flex;
-    margin-left: 200px;
     flex-wrap: wrap;
+    justify-content: center; /* Center content horizontally */
 }
 
 .profil {
-    width: 30%;
+    width: 100%;
+    max-width: 350px; /* Set a max width for the profile image */
     text-align: center;
     margin-bottom: 20px;
 }
 
 .profil img {
-    margin-top: 80px;
-    margin-bottom: 30px;
-    width: 350px;
-    height: 410px;
-    border-radius: 0%;
+    width: 100%; /* Make the image responsive */
+    height: auto;
+    border-radius: 50%; /* Make the profile image circular */
 }
 
-#profil-container h1 {
-    margin-top: 170px;
-    margin-left: 100px;
-    font-weight: bold;
-    font-size: 50px;
-}
-#profil-container p {
-    margin-top: 230px;
-    margin-left: -590px;
-    font-weight: bold;
-    font-size: 30px;
-    font-style: italic;
-}
-
-header h1 {
-    margin: 0;
+#profil-container h1, #profil-container p {
+    margin: 10px 0;
 }
 
 nav {
     position: fixed;
-    top: 0px;
+    top: 0;
     width: 100%;
     background-color: #172d49;
-    z-index: 1000; /* Menempatkan navbar di atas elemen lain */
+    z-index: 1000;
 }
 
 nav ul {
@@ -68,7 +54,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0;
 }
 
 nav ul li a {
@@ -84,7 +70,7 @@ nav ul li a:hover {
 }
 
 section {
-    padding: 30px 30px;
+    padding: 30px;
     margin: 20px auto;
     background-color: #fff;
     max-width: 1000px;
@@ -99,19 +85,25 @@ section h2 {
 
 .skill-container {
     display: flex;
-    justify-content: space-evenly;
-} 
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.skill-container li {
+    flex: 1 1 45%;
+    margin-bottom: 20px;
+}
 
 .stars {
-    color: #172d49; /* Warna bintang (gold) */
-    font-size: 1.7em; /* Ukuran bintang */
-    margin-left: 20px; /* Jarak antara skill dan rating */
+    color: #172d49;
+    font-size: 1.5em;
+    margin-left: 10px;
 }
 
 /* Slider container */
 .slider {
     position: relative;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 20px auto;
     overflow: hidden;
 }
@@ -124,7 +116,7 @@ section h2 {
 
 /* Individual slides */
 .slide {
-    display: none;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
@@ -138,17 +130,15 @@ section h2 {
 }
 
 .project-item img {
-    width: 450px;
+    width: 100%;
     height: auto;
-    margin-left: 10px;
-    margin-right: 10px;
     border-radius: 8px;
 }
 
 .project-item p {
-    margin-top: -55px;
+    margin-top: 10px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 /* Navigation arrows */
@@ -157,15 +147,15 @@ section h2 {
     top: 50%;
     width: 100%;
     display: flex;
-    justify-content:space-between;
-    transform: translateY(0%);
+    justify-content: space-between;
+    transform: translateY(-50%);
 }
 
 .slider-nav .prev, .slider-nav .next {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 10px;
-    border-radius: 0%;
+    border-radius: 50%;
     cursor: pointer;
 }
 
@@ -173,13 +163,13 @@ section h2 {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.contact button{
+.contact button {
     color: navy;
-	background-color: transparent;
-	border:none; 
-	padding: 8px 20px; 
-	margin: 8px;
-	font-size: 20px;
+    background-color: transparent;
+    border: none;
+    padding: 8px 20px;
+    margin: 8px;
+    font-size: 20px;
 }
 
 footer {
@@ -188,4 +178,46 @@ footer {
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .skill-container {
+        flex-direction: column;
+    }
+
+    .skill-container li {
+        flex: 1 1 100%;
+    }
+
+    .project-item {
+        width: 100%;
+    }
+
+    .profil img {
+        width: 80%;
+    }
+
+    #profil-container h1, #profil-container p {
+        margin-left: 0;
+    }
+
+    #profil-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .project-item img {
+        width: 100%;
+    }
 }
